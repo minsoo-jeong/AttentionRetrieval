@@ -1,2 +1,4 @@
 ckpts
 log.txt
+__pycache__/
+
