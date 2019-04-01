@@ -1,0 +1,281 @@
+ssh://root@mlmelon.sogang.ac.kr:22222/usr/local/bin/python -u /tmp/AttentionRetrieval/main.py
+Console output is saving to: C:\Users\MS\Documents\AttentionRetrieval\log.txt
+>> Dataset ...
+>> Create Model ... rmac-attention2D
+freeze backbone / init attention
+>> Setting Model ...
+>> paris6k: mAP 71.93
+>> paris6k: mAP 67.84
+>> Train	Epoch 1	lr 0.0001
+>> [ Train	Epoch 1 - Loss 0.1037 Pos 0.7059 Neg 0.9584 ]
+>> [ Valid	Epoch 1 - Loss 0.0799 Pos 0.6897 Neg 1.0741 ]
+>> paris6k: mAP 54.90
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_1.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_1.pth.tar
+>> Train	Epoch 2	lr 0.0001
+>> [ Train	Epoch 2 - Loss 0.0933 Pos 0.7318 Neg 1.0101 ]
+>> [ Valid	Epoch 2 - Loss 0.0720 Pos 0.7123 Neg 1.1366 ]
+>> paris6k: mAP 56.11
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_2.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_2.pth.tar
+>> Train	Epoch 3	lr 0.0001
+>> [ Train	Epoch 3 - Loss 0.0867 Pos 0.7624 Neg 1.0604 ]
+>> [ Valid	Epoch 3 - Loss 0.0685 Pos 0.7333 Neg 1.1711 ]
+>> paris6k: mAP 54.94
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_3.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_3.pth.tar
+>> Train	Epoch 4	lr 0.0001
+>> [ Train	Epoch 4 - Loss 0.0834 Pos 0.7776 Neg 1.0873 ]
+>> [ Valid	Epoch 4 - Loss 0.0706 Pos 0.7547 Neg 1.1964 ]
+>> paris6k: mAP 54.80
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_4.pth.tar
+>> Train	Epoch 5	lr 0.0001
+>> [ Train	Epoch 5 - Loss 0.0815 Pos 0.7871 Neg 1.1051 ]
+>> [ Valid	Epoch 5 - Loss 0.0646 Pos 0.7176 Neg 1.1716 ]
+>> paris6k: mAP 56.28
+>> paris6k: mAP 39.42
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_5.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_5.pth.tar
+>> Train	Epoch 6	lr 0.0001
+>> [ Train	Epoch 6 - Loss 0.0815 Pos 0.7959 Neg 1.1148 ]
+>> [ Valid	Epoch 6 - Loss 0.0705 Pos 0.7310 Neg 1.1729 ]
+>> paris6k: mAP 54.40
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_6.pth.tar
+>> Train	Epoch 7	lr 0.0001
+>> [ Train	Epoch 7 - Loss 0.0796 Pos 0.7989 Neg 1.1236 ]
+>> [ Valid	Epoch 7 - Loss 0.0664 Pos 0.7332 Neg 1.1866 ]
+>> paris6k: mAP 55.99
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_7.pth.tar
+>> Train	Epoch 8	lr 0.0001
+>> [ Train	Epoch 8 - Loss 0.0798 Pos 0.8050 Neg 1.1313 ]
+>> [ Valid	Epoch 8 - Loss 0.0673 Pos 0.7741 Neg 1.2255 ]
+>> paris6k: mAP 54.12
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_8.pth.tar
+>> Train	Epoch 9	lr 0.0001
+>> [ Train	Epoch 9 - Loss 0.0807 Pos 0.8091 Neg 1.1354 ]
+>> [ Valid	Epoch 9 - Loss 0.0608 Pos 0.7371 Neg 1.2189 ]
+>> paris6k: mAP 55.65
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_9.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_9.pth.tar
+>> Train	Epoch 10	lr 0.0001
+>> [ Train	Epoch 10 - Loss 0.0781 Pos 0.8087 Neg 1.1403 ]
+>> [ Valid	Epoch 10 - Loss 0.0653 Pos 0.7728 Neg 1.2419 ]
+>> paris6k: mAP 57.09
+>> paris6k: mAP 51.41
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_10.pth.tar
+>> Train	Epoch 11	lr 0.0001
+>> [ Train	Epoch 11 - Loss 0.0776 Pos 0.8097 Neg 1.1441 ]
+>> [ Valid	Epoch 11 - Loss 0.0646 Pos 0.7600 Neg 1.2243 ]
+>> paris6k: mAP 55.79
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_11.pth.tar
+>> Train	Epoch 12	lr 0.0001
+>> [ Train	Epoch 12 - Loss 0.0765 Pos 0.8111 Neg 1.1476 ]
+>> [ Valid	Epoch 12 - Loss 0.0596 Pos 0.7587 Neg 1.2461 ]
+>> paris6k: mAP 54.61
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_12.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_12.pth.tar
+>> Train	Epoch 13	lr 0.0001
+>> [ Train	Epoch 13 - Loss 0.0773 Pos 0.8131 Neg 1.1504 ]
+>> [ Valid	Epoch 13 - Loss 0.0622 Pos 0.7670 Neg 1.2409 ]
+>> paris6k: mAP 54.79
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_13.pth.tar
+>> Train	Epoch 14	lr 0.0001
+>> [ Train	Epoch 14 - Loss 0.0768 Pos 0.8169 Neg 1.1540 ]
+>> [ Valid	Epoch 14 - Loss 0.0594 Pos 0.7429 Neg 1.2209 ]
+>> paris6k: mAP 57.18
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_14.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_14.pth.tar
+>> Train	Epoch 15	lr 0.0001
+>> [ Train	Epoch 15 - Loss 0.0773 Pos 0.8150 Neg 1.1526 ]
+>> [ Valid	Epoch 15 - Loss 0.0656 Pos 0.7702 Neg 1.2350 ]
+>> paris6k: mAP 56.47
+>> paris6k: mAP 58.68
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_15.pth.tar
+>> Train	Epoch 16	lr 0.0001
+>> [ Train	Epoch 16 - Loss 0.0760 Pos 0.8143 Neg 1.1553 ]
+>> [ Valid	Epoch 16 - Loss 0.0627 Pos 0.7791 Neg 1.2507 ]
+>> paris6k: mAP 56.51
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_16.pth.tar
+>> Train	Epoch 17	lr 0.0001
+>> [ Train	Epoch 17 - Loss 0.0752 Pos 0.8158 Neg 1.1588 ]
+>> [ Valid	Epoch 17 - Loss 0.0603 Pos 0.7632 Neg 1.2576 ]
+>> paris6k: mAP 57.12
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_17.pth.tar
+>> Train	Epoch 18	lr 0.0001
+>> [ Train	Epoch 18 - Loss 0.0750 Pos 0.8175 Neg 1.1615 ]
+>> [ Valid	Epoch 18 - Loss 0.0594 Pos 0.7501 Neg 1.2357 ]
+>> paris6k: mAP 58.76
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_18.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_18.pth.tar
+>> Train	Epoch 19	lr 0.0001
+>> [ Train	Epoch 19 - Loss 0.0757 Pos 0.8176 Neg 1.1609 ]
+>> [ Valid	Epoch 19 - Loss 0.0615 Pos 0.7767 Neg 1.2649 ]
+>> paris6k: mAP 56.34
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_19.pth.tar
+>> Train	Epoch 20	lr 0.0001
+>> [ Train	Epoch 20 - Loss 0.0756 Pos 0.8172 Neg 1.1593 ]
+>> [ Valid	Epoch 20 - Loss 0.0576 Pos 0.7498 Neg 1.2333 ]
+>> paris6k: mAP 56.03
+>> paris6k: mAP 59.87
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_20.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_20.pth.tar
+>> Train	Epoch 21	lr 0.0001
+>> [ Train	Epoch 21 - Loss 0.0747 Pos 0.8189 Neg 1.1643 ]
+>> [ Valid	Epoch 21 - Loss 0.0624 Pos 0.7616 Neg 1.2472 ]
+>> paris6k: mAP 56.55
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_21.pth.tar
+>> Train	Epoch 22	lr 0.0001
+>> [ Train	Epoch 22 - Loss 0.0742 Pos 0.8206 Neg 1.1678 ]
+>> [ Valid	Epoch 22 - Loss 0.0615 Pos 0.7588 Neg 1.2432 ]
+>> paris6k: mAP 59.43
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_22.pth.tar
+>> Train	Epoch 23	lr 0.0001
+>> [ Train	Epoch 23 - Loss 0.0742 Pos 0.8192 Neg 1.1660 ]
+>> [ Valid	Epoch 23 - Loss 0.0579 Pos 0.7656 Neg 1.2618 ]
+>> paris6k: mAP 60.04
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_23.pth.tar
+>> Train	Epoch 24	lr 0.0001
+>> [ Train	Epoch 24 - Loss 0.0740 Pos 0.8197 Neg 1.1678 ]
+>> [ Valid	Epoch 24 - Loss 0.0631 Pos 0.7804 Neg 1.2606 ]
+>> paris6k: mAP 56.69
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_24.pth.tar
+>> Train	Epoch 25	lr 0.0001
+>> [ Train	Epoch 25 - Loss 0.0732 Pos 0.8191 Neg 1.1689 ]
+>> [ Valid	Epoch 25 - Loss 0.0593 Pos 0.7789 Neg 1.2677 ]
+>> paris6k: mAP 60.33
+>> paris6k: mAP 68.96
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_25.pth.tar
+>> Train	Epoch 26	lr 0.0001
+>> [ Train	Epoch 26 - Loss 0.0732 Pos 0.8191 Neg 1.1692 ]
+>> [ Valid	Epoch 26 - Loss 0.0583 Pos 0.7702 Neg 1.2612 ]
+>> paris6k: mAP 60.91
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_26.pth.tar
+>> Train	Epoch 27	lr 0.0001
+>> [ Train	Epoch 27 - Loss 0.0734 Pos 0.8193 Neg 1.1701 ]
+>> [ Valid	Epoch 27 - Loss 0.0601 Pos 0.7700 Neg 1.2561 ]
+>> paris6k: mAP 61.05
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_27.pth.tar
+>> Train	Epoch 28	lr 0.0001
+>> [ Train	Epoch 28 - Loss 0.0735 Pos 0.8202 Neg 1.1703 ]
+>> [ Valid	Epoch 28 - Loss 0.0649 Pos 0.7638 Neg 1.2479 ]
+>> paris6k: mAP 59.84
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_28.pth.tar
+>> Train	Epoch 29	lr 0.0001
+>> [ Train	Epoch 29 - Loss 0.0725 Pos 0.8161 Neg 1.1682 ]
+>> [ Valid	Epoch 29 - Loss 0.0610 Pos 0.7576 Neg 1.2479 ]
+>> paris6k: mAP 59.78
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_29.pth.tar
+>> Train	Epoch 30	lr 0.0001
+>> [ Train	Epoch 30 - Loss 0.0721 Pos 0.8166 Neg 1.1702 ]
+>> [ Valid	Epoch 30 - Loss 0.0590 Pos 0.7586 Neg 1.2531 ]
+>> paris6k: mAP 62.69
+>> paris6k: mAP 69.78
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_30.pth.tar
+>> Train	Epoch 31	lr 1e-05
+>> [ Train	Epoch 31 - Loss 0.0745 Pos 0.8176 Neg 1.1673 ]
+>> [ Valid	Epoch 31 - Loss 0.0588 Pos 0.7494 Neg 1.2425 ]
+>> paris6k: mAP 57.96
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_31.pth.tar
+>> Train	Epoch 32	lr 1e-05
+>> [ Train	Epoch 32 - Loss 0.0723 Pos 0.8178 Neg 1.1692 ]
+>> [ Valid	Epoch 32 - Loss 0.0574 Pos 0.7632 Neg 1.2571 ]
+>> paris6k: mAP 62.73
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_32.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_32.pth.tar
+>> Train	Epoch 33	lr 1e-05
+>> [ Train	Epoch 33 - Loss 0.0731 Pos 0.8189 Neg 1.1690 ]
+>> [ Valid	Epoch 33 - Loss 0.0620 Pos 0.7657 Neg 1.2502 ]
+>> paris6k: mAP 61.06
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_33.pth.tar
+>> Train	Epoch 34	lr 1e-05
+>> [ Train	Epoch 34 - Loss 0.0729 Pos 0.8180 Neg 1.1693 ]
+>> [ Valid	Epoch 34 - Loss 0.0590 Pos 0.7604 Neg 1.2488 ]
+>> paris6k: mAP 63.15
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_34.pth.tar
+>> Train	Epoch 35	lr 1e-05
+>> [ Train	Epoch 35 - Loss 0.0730 Pos 0.8179 Neg 1.1673 ]
+>> [ Valid	Epoch 35 - Loss 0.0577 Pos 0.7646 Neg 1.2609 ]
+>> paris6k: mAP 58.64
+>> paris6k: mAP 69.20
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_35.pth.tar
+>> Train	Epoch 36	lr 1e-05
+>> [ Train	Epoch 36 - Loss 0.0722 Pos 0.8164 Neg 1.1693 ]
+>> [ Valid	Epoch 36 - Loss 0.0605 Pos 0.7692 Neg 1.2614 ]
+>> paris6k: mAP 60.86
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_36.pth.tar
+>> Train	Epoch 37	lr 1e-05
+>> [ Train	Epoch 37 - Loss 0.0737 Pos 0.8163 Neg 1.1678 ]
+>> [ Valid	Epoch 37 - Loss 0.0610 Pos 0.7509 Neg 1.2388 ]
+>> paris6k: mAP 60.06
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_37.pth.tar
+>> Train	Epoch 38	lr 1e-05
+>> [ Train	Epoch 38 - Loss 0.0727 Pos 0.8172 Neg 1.1686 ]
+>> [ Valid	Epoch 38 - Loss 0.0594 Pos 0.7556 Neg 1.2398 ]
+>> paris6k: mAP 60.06
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_38.pth.tar
+>> Train	Epoch 39	lr 1e-05
+>> [ Train	Epoch 39 - Loss 0.0734 Pos 0.8181 Neg 1.1680 ]
+>> [ Valid	Epoch 39 - Loss 0.0584 Pos 0.7589 Neg 1.2499 ]
+>> paris6k: mAP 60.18
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_39.pth.tar
+>> Train	Epoch 40	lr 1e-05
+>> [ Train	Epoch 40 - Loss 0.0725 Pos 0.8173 Neg 1.1674 ]
+>> [ Valid	Epoch 40 - Loss 0.0571 Pos 0.7465 Neg 1.2382 ]
+>> paris6k: mAP 64.54
+>> paris6k: mAP 70.36
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_40.pth.tar
+save best ckpt .... ./ckpts/rmac_attention2D_freeze/model_best_40.pth.tar
+>> Train	Epoch 41	lr 1e-05
+>> [ Train	Epoch 41 - Loss 0.0730 Pos 0.8179 Neg 1.1696 ]
+>> [ Valid	Epoch 41 - Loss 0.0608 Pos 0.7726 Neg 1.2515 ]
+>> paris6k: mAP 61.31
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_41.pth.tar
+>> Train	Epoch 42	lr 1e-05
+>> [ Train	Epoch 42 - Loss 0.0725 Pos 0.8178 Neg 1.1688 ]
+>> [ Valid	Epoch 42 - Loss 0.0634 Pos 0.7705 Neg 1.2504 ]
+>> paris6k: mAP 59.13
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_42.pth.tar
+>> Train	Epoch 43	lr 1e-05
+>> [ Train	Epoch 43 - Loss 0.0727 Pos 0.8178 Neg 1.1682 ]
+>> [ Valid	Epoch 43 - Loss 0.0594 Pos 0.7732 Neg 1.2656 ]
+>> paris6k: mAP 59.63
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_43.pth.tar
+>> Train	Epoch 44	lr 1e-05
+>> [ Train	Epoch 44 - Loss 0.0729 Pos 0.8178 Neg 1.1684 ]
+>> [ Valid	Epoch 44 - Loss 0.0573 Pos 0.7403 Neg 1.2280 ]
+>> paris6k: mAP 62.64
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_44.pth.tar
+>> Train	Epoch 45	lr 1e-05
+>> [ Train	Epoch 45 - Loss 0.0735 Pos 0.8184 Neg 1.1689 ]
+>> [ Valid	Epoch 45 - Loss 0.0589 Pos 0.7631 Neg 1.2499 ]
+>> paris6k: mAP 59.52
+>> paris6k: mAP 69.40
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_45.pth.tar
+>> Train	Epoch 46	lr 1e-05
+>> [ Train	Epoch 46 - Loss 0.0720 Pos 0.8174 Neg 1.1689 ]
+>> [ Valid	Epoch 46 - Loss 0.0605 Pos 0.7723 Neg 1.2541 ]
+>> paris6k: mAP 58.65
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_46.pth.tar
+>> Train	Epoch 47	lr 1e-05
+>> [ Train	Epoch 47 - Loss 0.0717 Pos 0.8176 Neg 1.1703 ]
+>> [ Valid	Epoch 47 - Loss 0.0606 Pos 0.7807 Neg 1.2670 ]
+>> paris6k: mAP 58.84
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_47.pth.tar
+>> Train	Epoch 48	lr 1e-05
+>> [ Train	Epoch 48 - Loss 0.0724 Pos 0.8179 Neg 1.1688 ]
+>> [ Valid	Epoch 48 - Loss 0.0575 Pos 0.7659 Neg 1.2563 ]
+>> paris6k: mAP 60.97
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_48.pth.tar
+>> Train	Epoch 49	lr 1e-05
+>> [ Train	Epoch 49 - Loss 0.0724 Pos 0.8169 Neg 1.1694 ]
+>> [ Valid	Epoch 49 - Loss 0.0597 Pos 0.7644 Neg 1.2510 ]
+>> paris6k: mAP 59.48
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_49.pth.tar
+>> Train	Epoch 50	lr 1e-05
+>> [ Train	Epoch 50 - Loss 0.0719 Pos 0.8163 Neg 1.1698 ]
+>> [ Valid	Epoch 50 - Loss 0.0609 Pos 0.7639 Neg 1.2471 ]
+>> paris6k: mAP 61.29
+>> paris6k: mAP 70.57
+save ckpt .... ./ckpts/rmac_attention2D_freeze/model_epoch_50.pth.tar
+
+Process finished with exit code 0
