@@ -16,6 +16,7 @@ from train import *
 warnings.filterwarnings('ignore')
 
 if __name__ == '__main__':
+    torch.cuda.set_device(1)
     Epoch = 50
     start_epoch = 1
     it_train = 0
@@ -31,11 +32,11 @@ if __name__ == '__main__':
     ])
     trainSet = dataset.TripletDataset(os.path.join('/data', 'landmark', 'Landmark-clean', 'train'),
                                       transform=transform_train)
-    trainLoader = DataLoader(trainSet, batch_size=batch_size, shuffle=True, num_workers=8)
+    trainLoader = DataLoader(trainSet, batch_size=batch_size, shuffle=True, num_workers=4)
 
     validSet = dataset.TripletDataset(os.path.join('/data', 'landmark', 'Landmark-clean', 'valid'),
                                       transform=transform_valid)
-    validLoader = DataLoader(validSet, batch_size=50, shuffle=True, num_workers=8)
+    validLoader = DataLoader(validSet, batch_size=50, shuffle=True, num_workers=4)
 
     # Test DataSet
     test_trn = trn.Compose([
@@ -55,8 +56,8 @@ if __name__ == '__main__':
                          os.path.join('/data', 'oxford5k', 'gnd_oxford5k.pkl'))
 
     # make model
-    print('>> Create Model ... rmac-attention2D')
-    # embed = nets.Basic(pooling.RMAC())
+    print('>> Create Model ... rmac-2d')
+    #embed = nets.Basic(pooling.RMAC())
     embed = nets.Attn(attention.Attention2D(), pooling.RMAC())
     model = Network.TripletNet(embed)
     # freeze backbone
@@ -75,13 +76,13 @@ if __name__ == '__main__':
     # optimizer
     optimizer = SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=0.01, momentum=0.9, weight_decay=0.005)
     scheduler = lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.1)
-
     # set model
     print('>> Setting Model ...')
-    ckpts = None  # './ckpts/gem_attention2D/model_epoch_2.pth.tar'
+    ckpts = './ckpts/rmac_attention2D_freeze_0.01/model_epoch_30.pth.tar'  # './ckpts/gem_attention2D/model_epoch_2.pth.tar'
     if ckpts:
         ckpts = torch.load(ckpts)
         start_epoch = ckpts['epoch']
+        stdt=ckpts['model_state_dict']
         model.embedding_net.load_state_dict(ckpts['model_state_dict'])
         optimizer.load_state_dict(ckpts['optimizer'])
         for state in optimizer.state.values():
@@ -92,7 +93,7 @@ if __name__ == '__main__':
         it_train = ckpts['iterators'][0]
         it_valid = ckpts['iterators'][1]
     model.cuda()
-    model = nn.DataParallel(model)
+    #model = nn.DataParallel(model)
 
     # save best
     best_loss = 1.0
@@ -102,8 +103,8 @@ if __name__ == '__main__':
     is_best = False
 
     # base mAP
-    test_model = model.module.embedding_net
-    test_model = nn.DataParallel(test_model)
+    test_model = model.embedding_net
+    #test_model = nn.DataParallel(test_model)
     test(test_model, paris, 224, test_trn)
     test(test_model, paris, 1024, test_trn)
 
@@ -117,8 +118,9 @@ if __name__ == '__main__':
         loss, dp, dn, it_valid = valid(model, validLoader, criterion, ep, it_valid, verbose=False)
 
         # test
-        test_model = model.module.embedding_net
-        test_model = nn.DataParallel(test_model)
+        test_model = model.embedding_net
+        #test_model = model.module.embedding_net
+        #test_model = nn.DataParallel(test_model)
         test(test_model, paris, 224, test_trn)
         if ep % 5 == 0:
             map = test(test_model, paris, 1024, test_trn)
@@ -130,7 +132,8 @@ if __name__ == '__main__':
 
             save_ckpt({
                 'epoch': ep + 1,
-                'model_state_dict': model.module.embedding_net.state_dict(),
+                #'model_state_dict': model.module.embedding_net.state_dict(),
+                'model_state_dict': model.embedding_net.state_dict(),
                 'optimizer': optimizer.state_dict(),
                 'iterators': [it_train, it_valid],
-            }, is_best, './ckpts/rmac_attention2D_freeze_01/')
+            }, is_best, './ckpts/rmac_attention2D_freeze_0.01/')

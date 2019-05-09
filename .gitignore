@@ -1,4 +1,9 @@
 ckpts
 log.txt
 __pycache__/
-
+*.jpg
+visualize
+logs
+prefetch
+out
+*.pth

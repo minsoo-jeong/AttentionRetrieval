@@ -146,6 +146,15 @@ if __name__ == '__main__':
     import os
     from torch.utils.data import DataLoader
 
+
+    visual_img = ListDataSet([os.path.join('/data', 'paris6k', 'jpg', 'paris_general_000001.jpg')]*5, image_size=224,
+                             bbx=None, transform=None)
+    print(visual_img[0][0].size())
+    vl=DataLoader(visual_img,batch_size=5)
+    print(iter(vl).__next__()[1])
+    print(iter(vl).__next__()[1])
+    '''
+
     transform_valid = transform_train = trn.Compose([
         trn.Resize((224, 224)),
         trn.ToTensor(),
@@ -159,3 +168,4 @@ if __name__ == '__main__':
 
     for i in trainLoader:
         print(i[1], i[2])
+'''

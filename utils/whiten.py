@@ -1,5 +1,5 @@
 import os
-
+import torch
 import numpy as np
 
 
@@ -8,7 +8,7 @@ def whitenapply(X, m, P, dimensions=None):
         dimensions = P.shape[1]
 
     X = np.dot(X - m, P[:, :dimensions])
-    X = X / (np.linalg.norm(X, ord=2, axis=1, keepdims=True) + 1e-6)
+    X = X / (np.linalg.norm(X, ord=2, axis=1, keepdims=True) + 1e-12)
 
     return X
 
@@ -19,10 +19,16 @@ def pcawhitenlearn(X):
     # Learning PCA w/o annotations
     m = X.mean(axis=0, keepdims=True)
     Xc = X - m
-    cov = np.dot(Xc.T, Xc) / N
-    U, S, V = np.linalg.svd(cov)
+    Xcov = np.dot(Xc.T, Xc)
+    Xcov = (Xcov + Xcov.T) / (2 * N)
+    eigval, eigvec = np.linalg.eig(Xcov)
+    order = eigval.argsort()[::-1]
+    eigval = eigval[order]
+    eigvec = eigvec[:, order]
 
-    return m, U
+    P = np.dot(np.linalg.inv(np.sqrt(np.diag(eigval))), eigvec.T)
+
+    return m, P
 
 
 def whitenlearn(X, qidxs, pidxs):
@@ -59,3 +65,27 @@ def cholesky(S):
                 alpha *= 10
             print(">>>> {}::cholesky: Matrix is not positive definite, adding {:.0e} on the diagonal"
                   .format(os.path.basename(__file__), alpha))
+
+
+def learningPCA2(listData):
+    fudge = 1E-18
+    X=listData
+    mean = X.mean(axis=0)
+    # subtract the mean
+    X = np.subtract(X, mean)
+    # calc covariance matrix
+    Xcov = np.dot(X.T,X)
+
+    U,S,V=np.linalg.svd(Xcov)
+
+    return U,S,V,mean
+
+def apply_whitening2(X,m,u,s):
+    X=torch.Tensor(X)
+    m = torch.Tensor(m)
+    u = torch.Tensor(u)
+    s = torch.Tensor(s)
+
+    x_whiten=torch.mm(torch.sub(X,m),u[:,:])/torch.sqrt(s[:]+1e-18)
+    x_whiten /= torch.norm(x_whiten,p=2,dim=1,keepdim=True)
+    return x_whiten.numpy()

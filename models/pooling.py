@@ -26,7 +26,7 @@ class SPoC(nn.Module):
 
 
 class RMAC(nn.Module):
-    def __init__(self, L=3, eps=1e-6):
+    def __init__(self, L=3, eps=1e-12):
         super(RMAC, self).__init__()
         self.L = L
         self.eps = eps
@@ -35,7 +35,7 @@ class RMAC(nn.Module):
         rmac = self.rmac(x, L=self.L, eps=self.eps)
         return rmac.squeeze(-1).squeeze(-1)
 
-    def rmac(self, x, L=3, eps=1e-6):
+    def rmac(self, x, L=3, eps=1e-12):
         ovr = 0.4  # desired overlap of neighboring regions
         steps = torch.Tensor([2, 3, 4, 5, 6, 7])  # possible regions for the long dimension
 
@@ -89,7 +89,7 @@ class RMAC(nn.Module):
 
 class GeM(nn.Module):
 
-    def __init__(self, p=3, eps=1e-6):
+    def __init__(self, p=3, eps=1e-12):
         super(GeM, self).__init__()
         self.p = Parameter(torch.ones(1) * p)
         self.eps = eps
@@ -98,9 +98,35 @@ class GeM(nn.Module):
         gem = self.gem(x, p=self.p, eps=self.eps)
         return gem.squeeze(-1).squeeze(-1)
 
-    def gem(self, x, p=3, eps=1e-6):
+    def gem(self, x, p=3, eps=1e-12):
         return F.avg_pool2d(x.clamp(min=eps).pow(p), (x.size(-2), x.size(-1))).pow(1. / p)
 
     def __repr__(self):
         return self.__class__.__name__ + '(' + 'p=' + '{:.4f}'.format(self.p.data.tolist()[0]) + ', ' + 'eps=' + str(
             self.eps) + ')'
+
+class L2N(nn.Module):
+
+    def __init__(self, eps=1e-6):
+        super(L2N, self).__init__()
+        self.eps = eps
+
+    def forward(self, x):
+        return x / (torch.norm(x, p=2, dim=1, keepdim=True) + self.eps).expand_as(x)
+
+    def __repr__(self):
+        return self.__class__.__name__ + '(' + 'eps=' + str(self.eps) + ')'
+
+
+if __name__=='__main__':
+    import numpy as np
+    import torchvision.transforms as trn
+
+    a=torch.Tensor(np.arange(2*5*6*6).reshape(2,5,6,6))/2*5*6*6
+    b=trn.Compose(trn.Resize(3))
+    c=torch.nn.functional.interpolate(a,scale_factor=0.5,mode='bilinear')
+    #c=b(a)
+    print(a[0,1])
+    print(c[0,1],c.size())
+    g = np.random.choice(5, 1)
+    print(g)

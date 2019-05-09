@@ -12,6 +12,11 @@ def pdist(vectors):
     return distance_matrix
 
 
+def pdist2(vectors):
+    distance_matrix = 1 - vectors.mm(torch.t(vectors))
+    return distance_matrix
+
+
 class ContrastiveLoss(nn.Module):
     """
     Contrastive loss
@@ -94,11 +99,13 @@ class OnlineTripletLoss(nn.Module):
         if embeddings.is_cuda:
             triplets = triplets.cuda()
 
-        ap_distances = (embeddings[triplets[:, 0]] - embeddings[triplets[:, 1]]).pow(2).sum(1)  # .pow(.5)
-        an_distances = (embeddings[triplets[:, 0]] - embeddings[triplets[:, 2]]).pow(2).sum(1)  # .pow(.5)
+        # ap_distances = (embeddings[triplets[:, 0]] - embeddings[triplets[:, 1]]).pow(2).sum(1)  # .pow(.5)
+        # an_distances = (embeddings[triplets[:, 0]] - embeddings[triplets[:, 2]]).pow(2).sum(1)  # .pow(.5)
+        ap_distances = 1 - torch.diag(embeddings[triplets[:, 0]].mm(torch.t(embeddings[triplets[:, 1]])))
+        an_distances = 1 - torch.diag(embeddings[triplets[:, 0]].mm(torch.t(embeddings[triplets[:, 2]])))
         losses = F.relu(ap_distances - an_distances + self.margin)
 
-        return losses.mean(), len(triplets)
+        return losses.mean(), ap_distances.mean(), an_distances.mean(), len(triplets)
 
 
 class TripletSelector:
@@ -174,7 +181,7 @@ class FunctionNegativeTripletSelector(TripletSelector):
     def get_triplets(self, embeddings, labels):
         if self.cpu:
             embeddings = embeddings.cpu()
-        distance_matrix = pdist(embeddings)
+        distance_matrix = pdist2(embeddings)
         distance_matrix = distance_matrix.cpu()
 
         labels = labels.cpu().data.numpy()
